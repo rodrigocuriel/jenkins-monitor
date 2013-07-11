@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <title>JENKINS health monitor with CSS3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="JENKINS health monitor slideshow" />
-        <meta name="keywords" content="css3, css-only, fullscreen, background, slideshow, images, content, jenins, monitor, health" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style1.css" />
-        <link rel="stylesheet" type="text/css" href="css/cb_list.css" />
-        <script src="js/modernizr.custom.86080.js"></script>
-    </head>
-    <body id="page">
-        <ul class="cb-slideshow">
-            <!-- <li><span>Image 01</span><div><h3>JENKINS health monitor</h3></div></li> -->
-            <!-- <li><span>Image 02</span><div><h3>loading jobs from server</h3></div></li> -->
-        </ul>
-        <ul class="cb-joblist"></ul>
-        <div class="container">
-            <header>
-                <h1>JENKINS <span>status dashboard</span></h1>
-            </header>
-        </div>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Tweetflight Presentation</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">       
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/vendor/modernizr.min.js"></script>
+</head>
+<body>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+  <article>
+    <section class="image17">
+      <div class="content">
+        Hello. <strong>I am monitoring JENKINS</strong>.<br/>
+        trying to get feed...
+      </div>
+    </section>
+  </article>
+  <audio>
+    <source src="audio/ALARME2.mp3"></source>
+    Your browser isn't invited for super fun audio time.
+  </audio>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+  <script src="scripts/vendor/bespoke.min.js"></script>
+  <script src="scripts/vendor/bespoke.loop.min.js"></script>
+  <script src="scripts/vendor/handlebars.runtime.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  
+
+  <script id="jobsTemplate" type="text/x-handlebars-template">
+    {{#each jobs}}
+      <section class="image0 {{getStatus color}}">
+        <div class="content">
+          {{trim name}}<br/>
+          <div class="{{getStatus color}} strong">{{changeWord color}}</div>
+        </div>
+      </section>
+    {{/each}}
+  </script>
+
+  <script src="scripts/main.js"></script>
+</body>
 </html>

@@ -11,7 +11,7 @@ send_json = function(type, url) {
   });
 }
 
-io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function(socket) {
   console.log('i got a new connection');
 
   socket.on('getJobs', function() {
@@ -24,7 +24,7 @@ io.sockets.on('connection', function (socket) {
     send_json('job', data.url);
   });
 
-  socket.on('my other event', function (data) {
+  socket.on('my other event', function(data) {
     console.log(data);
   });
 

@@ -1,8 +1,0 @@
-{
-  "name": "jenkins monitor",
-  "version": "0.0.2",
-  "dependencies": {
-    "socket.io": "~0.9.16",
-    "request": "~2.11.4"
-  }
-}
