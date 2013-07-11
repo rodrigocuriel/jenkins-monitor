@@ -54,7 +54,7 @@ socket.on('jobs', function(data) {
         var clsName = this.className.match(/\w*image\w*/)[0];
         $(this).removeClass(clsName);
       });
-      $('section').addClass('image' + Math.floor(Math.random() * 20));
+      $('section').addClass('image' + Math.floor(Math.random() * 17));
     }
     if (event.slide.classList.contains('failed')) {
       //  audio.play();
