@@ -1,5 +1,5 @@
 {
-  "name": "jenkins monitor",
+  "name": "jenkins_monitor",
   "version": "0.0.2",
   "dependencies": {
     "socket.io": "~0.9.16",
