@@ -1,4 +1,6 @@
-String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
+String.prototype.trim = function() {
+  return this.replace(/^\s+|\s+$/g, '');
+};
 
 Handlebars.getTemplate = function(name, callback) {
   if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
@@ -17,8 +19,32 @@ Handlebars.getTemplate = function(name, callback) {
 };
 
 Handlebars.registerHelper('changeWord', function() {
-  var array_success = ['working like a charm', 'okey dokey'];
-  var array_failure = ['not working', 'fix me !!', 'failing miserably'];
+  var array_success = [
+    'working like a charm',
+    'okey dokey',
+    'Excelsior!',
+    'New Hotness',
+    'Rock Solid',
+    'Well Done',
+    'Excellent',
+    'Fantastic',
+    'Good Work',
+    'Nice!'
+  ];
+  var array_failure = [
+    'not working',
+    'fix me !!',
+    'failing miserably',
+    "It's Jacked",
+    'Busted!',
+    'No beer for you.',
+    'Doh',
+    "Help, I'm Broken!",
+    "I'm dying over here",
+    'This Sucks.',
+    'Boooooo',
+    'Blame [insert name here]'
+  ];
   var array_unknown = ['never executed'];
 
   var result = array_unknown[Math.floor(Math.random() * array_unknown.length)];
