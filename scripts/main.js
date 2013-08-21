@@ -9,7 +9,7 @@
 var intervaLID;
 
 function getJSONfeed() {
-  var url = 'http://founders:8080/api/json?tree=jobs[lastSuccessfulBuild[timestamp],color,buildable,displayName,healthReport[description,score]]';
+  var url = 'http://192.168.22.64:8080/api/json?tree=jobs[lastSuccessfulBuild[timestamp],color,buildable,displayName,healthReport[description,score]]';
 
   $.ajax({
     dataType: "json",
