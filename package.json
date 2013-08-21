@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "dependencies": {
     "socket.io": "~0.9.16",
-    "request": "~2.11.4"
+    "request": "~2.11.4",
+    "handlebars-helpers": "~0.3.2"
   }
 }

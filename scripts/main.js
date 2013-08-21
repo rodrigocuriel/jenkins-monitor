@@ -5,26 +5,23 @@
  * Released under the MIT license
  *
  */
-var socket = io.connect('http://localhost:3000');
-var audio = document.getElementsByTagName("audio")[0];
+
 var intervaLID;
 
-socket.on('someone connected', function() {
-  console.log('someone just connected!');
-});
+function getJSONfeed() {
+  var url = 'http://founders:8080/api/json?tree=jobs[lastSuccessfulBuild[timestamp],color,buildable,displayName,healthReport[description,score]]';
 
-socket.on('job', function(data) {
-  console.log('received event job');
-  var li_name = "li[job_name='" + data.name + "']";
-  $(li_name).html('');
-  $(li_name).append($('<ul>').text(obj.name).attr('job_name', obj.name));
-});
+  $.ajax({
+    dataType: "json",
+    url: url,
+    success: jobsHandler
+  });
+}
 
-socket.on('jobs', function(data) {
-  console.log('received event job list');
+function jobsHandler(data) {
   window.clearInterval(intervaLID);
-  //$("article").html('');
-  var job_obj = JSON.parse(data).jobs;
+
+  var job_obj = data.jobs;
   //Get the Template from above
   var Source = document.getElementById("jobsTemplate").textContent;
 
@@ -39,51 +36,14 @@ socket.on('jobs', function(data) {
   //Replace the body section with the new code.
   $("article").html(HTML);
 
-  /*$('.content').each(function(){
-    var cleanedHTML = $(this).html().replace(/\s+/g, " ");
-    $(this).html(cleanedHTML);
-  });*/
-
-  bespoke.horizontal.from('article', {
-    loop: true
-  });
-
-  bespoke.on('activate', function(event) {
-    if (event.index >= (job_obj.length - 1)) {
-      $('[class*="image"]').each(function() {
-        var clsName = this.className.match(/\w*image\w*/)[0];
-        $(this).removeClass(clsName);
-      });
-      $('section').addClass('image' + Math.floor(Math.random() * 17));
-    }
-    if (event.slide.classList.contains('failed')) {
-      //  audio.play();
-    }
-    // Prevent default functionality (for user interaction events only)
-    return false;
-  });
-
-  /*
-  var $selected = $('.failed');
-  var $parent = $selected.parent();
-  $selected.remove();
-  $selected.appendTo($parent);
-  */
   intervaLID = window.setInterval(function() {
-    bespoke.next();
+    getJSONfeed();
   }, 5000);
-});
-
-socket.on('reload', function() {
-  location.reload()
-});
+};
 
 (function($) {
-  bespoke.horizontal.from('article', {
-    loop: true
-  });
   window.setTimeout(function() {
-    socket.emit('getJobs');
+    getJSONfeed();
     document.webkitRequestFullscreen;
-  }, 3000);
+  }, 300);
 })(jQuery);

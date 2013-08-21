@@ -23,27 +23,30 @@
       </div>
     </section>
   </article>
-  <audio>
+  <!-- <audio>
     <source src="audio/ALARME2.mp3"></source>
     Your browser isn't invited for super fun audio time.
-  </audio>
+  </audio> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
   <script src="scripts/vendor/bespoke.min.js"></script>
   <script src="scripts/vendor/bespoke.loop.min.js"></script>
   <script src="scripts/vendor/handlebars.runtime.js"></script>
   <script src="scripts/utils.js"></script>
-  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
   
 
   <script id="jobsTemplate" type="text/x-handlebars-template">
     {{#each jobs}}
-      <section class="image0 {{getStatus color}}">
-        <div class="content">
-          {{trim name}}<br/>
-          <div class="{{getStatus color}} strong">{{changeWord color}}</div>
-        </div>
-      </section>
+      {{#ifItemSelected displayName}}
+        <section class="image0 {{getStatus color}}">
+          <div class="content">
+            {{trim displayName}}<br/>
+            <div class="{{getStatus color}} strong">{{changeWord color}}</div>
+            <div>Score: {{healthReport.0.score}}</div>
+          </div>
+        </section>
+        {{/ifItemSelected}}
     {{/each}}
   </script>
 

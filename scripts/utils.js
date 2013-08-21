@@ -18,6 +18,14 @@ Handlebars.getTemplate = function(name, callback) {
   return Handlebars.templates[name];
 };
 
+Handlebars.registerHelper('ifItemSelected', function(item, block) {
+  // lots of logic that determines if item is selected
+  var str = item.toLowerCase();
+  if ( (str.indexOf("blackberry") && str.indexOf('windows')) >= 0 )  {
+    return block.fn(this);
+  }
+});
+
 Handlebars.registerHelper('changeWord', function() {
   var array_success = [
     'working like a charm',
