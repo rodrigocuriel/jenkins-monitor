@@ -13,13 +13,13 @@
   <link rel="stylesheet" href="styles/main.css">
   <script src="scripts/vendor/modernizr.min.js"></script>
 </head>
-<body>
+<body class="image0">
 
   <article>
     <section class="image17">
       <div class="content">
         Hello. <strong>I am monitoring JENKINS</strong>.<br/>
-        trying to get feed...
+        <div class="status">trying to get feed...</div>
       </div>
     </section>
   </article>
@@ -39,11 +39,11 @@
   <script id="jobsTemplate" type="text/x-handlebars-template">
     {{#each jobs}}
       {{#ifItemSelected displayName}}
-        <section class="image0 {{getStatus color}}">
+        <section class="{{getStatus color}}">
           <div class="content">
-            {{trim displayName}}<br/>
-            <div class="{{getStatus color}} strong">{{changeWord color}}</div>
-            <div>Score: {{healthReport.0.score}}</div>
+            <div class="title">{{trim displayName}}</div>
+            <!-- <div class="{{getStatus color}}">{{changeWord color}}</div> -->
+            <div class="score">Score: {{healthReport.0.score}}</div>
           </div>
         </section>
         {{/ifItemSelected}}

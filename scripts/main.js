@@ -14,9 +14,19 @@ function getJSONfeed() {
   $.ajax({
     dataType: "json",
     url: url,
-    success: jobsHandler
+    timeout: 1000,
+    success: jobsHandler,
+    error: errorHandler
   });
 }
+
+function errorHandler(x, t, m) {
+  if (t === "timeout") {
+    $('.content .status').html("server timeout...");
+  } else {
+    $('.content .status').html(t);
+  }
+};
 
 function jobsHandler(data) {
   window.clearInterval(intervaLID);

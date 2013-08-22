@@ -28,44 +28,33 @@ height:100%;
 font-size:9em
 }
 
-body .bespoke-slide .failed {
+body section.failed {
 color:red
 }
 
-body .bespoke-slide .success {
+body section.success {
 color:green
 }
 
-body .bespoke-slide .strong {
-position: absolute;
-text-align: left;
-font-weight: 600;
-right: 0;
-bottom: 0;
-}
-
-body .bespoke-inactive {
-display:none
-}
-
-.bespoke-slide {
-display:-webkit-box;
-display:-moz-box;
-display:-ms-box;
-display:box
-}
-
 body section {
-background-position:center center;
-background-size:cover
+	float: none;
+	clear: both;
 }
 
-body section video {
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%
+body section .content > div{
+	float: left;
+	margin-left: 20px;
+	font-size: 40px;
+}
+
+body section .content div.title {
+}
+
+body section .content div.status {
+}
+
+body section .content div.score {
+	float: right;
 }
 
 body section .content {
@@ -93,184 +82,4 @@ font-family:"Source Code Pro";
 font-size:.8125em;
 font-weight:700;
 color:#0cf
-}
-
-body section.image0 {
-background:url(../images/pattern.png) top left repeat,url(../images/000.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image1 {
-background:url(../images/pattern.png) top left repeat,url(../images/001.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image2 {
-background:url(../images/pattern.png) top left repeat,url(../images/002.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image3 {
-background:url(../images/pattern.png) top left repeat,url(../images/003.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image4 {
-background:url(../images/pattern.png) top left repeat,url(../images/004.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image5 {
-background:url(../images/pattern.png) top left repeat,url(../images/005.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image6 {
-background:url(../images/pattern.png) top left repeat,url(../images/006.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image7 {
-background:url(../images/pattern.png) top left repeat,url(../images/007.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image8 {
-background:url(../images/pattern.png) top left repeat,url(../images/008.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image9 {
-background:url(../images/pattern.png) top left repeat,url(../images/009.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image10 {
-background:url(../images/pattern.png) top left repeat,url(../images/010.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image11 {
-background:url(../images/pattern.png) top left repeat,url(../images/011.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image12 {
-background:url(../images/pattern.png) top left repeat,url(../images/012.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image13 {
-background:url(../images/pattern.png) top left repeat,url(../images/013.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image14 {
-background:url(../images/pattern.png) top left repeat,url(../images/014.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image15 {
-background:url(../images/pattern.png) top left repeat,url(../images/015.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image16 {
-background:url(../images/pattern.png) top left repeat,url(../images/016.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
-}
-
-body section.image17 {
-background:url(../images/pattern.png) top left repeat,url(../images/017.jpg) top left no-repeat;
-background-attachment:fixed;
-background-position:top left;
--webkit-background-size:auto,cover;
--moz-background-size:auto,cover;
--o-background-size:auto,cover;
-background-size:auto,cover
 }
