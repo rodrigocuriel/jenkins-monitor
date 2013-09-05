@@ -21,7 +21,7 @@ Handlebars.getTemplate = function(name, callback) {
 Handlebars.registerHelper('ifItemSelected', function(item, block) {
   // lots of logic that determines if item is selected
   var str = item.toLowerCase();
-  if ( (str.indexOf("blackberry") && str.indexOf('windows')) >= 0 )  {
+  if ( (str.indexOf("blackberry") && str.indexOf('html5') && str.indexOf('windows')) >= 0 )  {
     return block.fn(this);
   }
 });
